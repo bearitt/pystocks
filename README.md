@@ -4,9 +4,7 @@ Simple command line interface written in Python to access stock information on U
 ## Dependencies
 * Python
 * Yahoo finance API
-    * ```
-        pip install yfinance
-    ```
+    * ``` pip install yfinance ```
 
 ## Usage guide
 The program is run from the command line; open a terminal in the parent directory and type
