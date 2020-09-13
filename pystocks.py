@@ -1,7 +1,5 @@
-from api_access import *
+from ui import *
 
-print("Welcome to Pystocks!")
-intel = 'INTC'
-stock_info = stock_lookup(intel)
-for key in stock_info:
-    print(str(key) + ": " + str(stock_info[key]))
+print('Welcome to Pystocks!\n-----------------------------')
+lookup_stock()
+print('Thank you for using Pystocks!')
