@@ -9,10 +9,10 @@ Simple command line interface written in Python to access stock information on U
 ## Usage guide
 The program is run from the command line; compile and run pystocks.py.
 
-##Modules
-*pystocks.py
-    *Main method, calls ui.py to start the user interface.
-*api-access.py
-    *Accesses Yahoo Finance API. Has a single function stock_lookup, which takes a stock symbol string argument and returns a dictionary containing basic information about the stock.
-*ui.py
-    *Creates a simple UI for the user to input stock symbols to lookup. Has a single function, user_search, which prompts the user for a stock symbol, then call stock_lookup and returns the information for the selected company. The method loops until the user types 'exit'.
+## Modules
+* pystocks.py
+    * Main method, calls ui.py to start the user interface.
+* api-access.py
+    * Accesses Yahoo Finance API. Has a single function stock_lookup, which takes a stock symbol string argument and returns a dictionary containing basic information about the stock.
+* ui.py
+    * Creates a simple UI for the user to input stock symbols to lookup. Has a single function, user_search, which prompts the user for a stock symbol, then call stock_lookup and returns the information for the selected company. The method loops until the user types 'exit'.
