@@ -7,6 +7,7 @@ def stock_lookup(symbol):
     #create dictionary with important info from Ticker
     important_info = {
             'Company':sInfo['shortName'],
+            'Symbol':sInfo['symbol'],
             'Sector':sInfo['sector'],
             'Exchange':sInfo['exchange'],
             'Current Price':sInfo['regularMarketPrice'],
