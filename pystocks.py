@@ -1,5 +1,5 @@
 from ui import *
 
 print('Welcome to Pystocks!\n-----------------------------')
-lookup_stock()
+user_search()
 print('Thank you for using Pystocks!')
