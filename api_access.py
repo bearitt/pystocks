@@ -5,6 +5,17 @@ def stock_lookup(symbol):
     stock = yf.Ticker(symbol)
     sInfo = stock.info
     #create dictionary with important info from Ticker
-    important_info = {'Company':sInfo['shortName'],'Sector':sInfo['sector'],'Summary':sInfo['longBusinessSummary']}
+    important_info = {
+            'Company':sInfo['shortName'],
+            'Sector':sInfo['sector'],
+            'Exchange':sInfo['exchange'],
+            'Current Price':sInfo['regularMarketPrice'],
+            'Dividend Yield':sInfo['dividendYield'],
+            'Price to Earnings Ratio':sInfo['trailingPE'],
+            'Market Cap':sInfo['marketCap'],
+            'One year low/high':str(str(sInfo['fiftyTwoWeekLow']) + "/" + str(sInfo['fiftyTwoWeekHigh'])),
+            'Summary':sInfo['longBusinessSummary'],
+            'Website':sInfo['website']}
+    #return dictionary with important stock ticker info
     return important_info
 
