@@ -25,6 +25,7 @@ def output_json(dictionary):
     json_file.write('}')
     json_file.close()
     return
+#note: json output validated on jsonlint.com for correctness
 
 def output_csv(dictionary):
     check_for_dir()
