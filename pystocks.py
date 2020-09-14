@@ -1,4 +1,4 @@
-from ui import *
+from lib.ui import *
 
 print('Welcome to Pystocks!\n-----------------------------')
 user_search()
