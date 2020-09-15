@@ -1,5 +1,5 @@
-from lib.api_access import *
-from lib.output import *
+from packages.api_access import *
+from packages.output import *
 
 def user_search():
     input_message = 'Please input a stock symbol to see more information on the stock (note that only US market symbols are supported), or type in \'exit\' to exit the program :\n' 
@@ -7,7 +7,7 @@ def user_search():
     #loop until user inputs 'exit'
     symbol = ''
     while symbol.lower()!='exit':
-        symbol = input(input_message).upper()
+        symbol = input(input_message)
         #check for 'exit' signal to skip api access
         if symbol.lower() == 'exit':
             continue
