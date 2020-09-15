@@ -1,5 +1,5 @@
 from packages.ui import *
 
-print('Welcome to Pystocks!\n-----------------------------')
-user_search()
-print('Thank you for using Pystocks!')
+# this package is pretty barebones at the moment
+# option to add new features later
+welcome()
