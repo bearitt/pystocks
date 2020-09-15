@@ -29,8 +29,10 @@ def print_stock(symbol):
 
 def file_prompt(stock_info):
     user_choice = -1
-    while user_choice < 0 or user_choice > 3:
+    none_flag = txt_flag = json_flag = csv_flag = False
+    while not none_flag and not txt_flag and not json_flag and not csv_flag:
         print('''Would you like to output the results to a file?
+    (Note that multiple file types can be output simultaneously, e.g. 13 will output a .txt file and a .csv file)
     0. No thank you
     1. .txt file
     2. .json file
@@ -39,24 +41,33 @@ def file_prompt(stock_info):
         is_string = False
     # try block catches ValueError: catches exceptions thrown when
     # user inputs a non-integer value
+        user_choice = input('Your choice: ')
         try:
-            user_choice = int(input('Your choice: '))
+            int_user_choice = int(user_choice)
+        # flags determine type of output desired, allows for multiple reports
+        # to be generated
+            none_flag = user_choice.find('0') != -1
+            txt_flag = user_choice.find('1') != -1
+            json_flag = user_choice.find('2') != -1
+            csv_flag = user_choice.find('3') != -1
         except ValueError:
             print('That\'s not a number, try again!')
             is_string = True
-        if user_choice==0:
+        int_user_choice = None
+        if none_flag:
             continue
-        elif user_choice==1:
-            output_txt(stock_info)
-            print('Text file generated in reports directory')
-        elif user_choice==2:
-            output_json(stock_info)
-            print('JSON file generated in reports directory')
-        elif user_choice==3:
-            output_csv(stock_info) 
-            print('CSV file generated in reports directory')
-        elif (user_choice<0 or user_choice>3) and not is_string:
-            print('Invalid choice, try a number in the specified range!')
+        else:
+            if txt_flag:
+                output_txt(stock_info)
+                print('Text file generated in reports directory')
+            if json_flag:
+                output_json(stock_info)
+                print('JSON file generated in reports directory')
+            if csv_flag:
+                output_csv(stock_info) 
+                print('CSV file generated in reports directory')
+            elif not is_string:
+                print('Invalid choice, try a number in the specified range!')
 
 def goodbye():
     print('Thank you for using Pystocks!')
