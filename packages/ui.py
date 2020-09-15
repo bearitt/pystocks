@@ -1,5 +1,6 @@
 from packages.api_access import *
 from packages.output import *
+import http
 
 def welcome():
     print('Welcome to Pystocks!\n-----------------------------')
@@ -24,6 +25,8 @@ def print_stock(symbol):
                 print(str(key) + ": " + str(stock_info[key]))
             file_prompt(stock_info)
         except IndexError:
+            print('Sorry, we couldn\'t find a company matching that symbol')
+        except http.client.InvalidURL:
             print('Sorry, we couldn\'t find a company matching that symbol')
         print('-----------------------------')
 
